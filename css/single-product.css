@@ -1,0 +1,52 @@
+/* Wave Button Don't Work, need rework Button template.like
+ <button>
+    <div class="single_add_to_cart_button button"> </div>
+    <span>Купить</span>
+
+</button>
+
+ */
+
+body.single-product div.product div.summary form.cart button.single_add_to_cart_button {
+    position: absolute;
+    border: none;
+    overflow: hidden;
+    /*top:-100px;*/
+    /*left:0;*/
+    /*width: 200%;*/
+    /*height: 200%;*/
+    background-color: transparent;
+    background: linear-gradient(45deg, #4f00bc, #29abe2) !important;
+    transition: .5s ease;
+}
+
+body.single-product div.product div.summary form.cart button.single_add_to_cart_button:after, body.single-product div.product div.summary form.cart button.single_add_to_cart_button:before {
+    content:'';
+    position: absolute;
+    z-index: 1000;
+    width:200%;
+    height:200%;
+    top:-5px;
+    left:50%;
+    transform: translate(-50%, -75%);
+}
+body.single-product div.product div.summary form.cart button.single_add_to_cart_button:after {
+    border-radius: 40%;
+    background-color:rgba(250,250,250, 0.5 );
+    /*animation: wave 75ms linear 75ms infinite;*/
+}
+
+body.single-product div.product div.summary form.cart button.single_add_to_cart_button:before {
+    border-radius: 45%;
+    background-color:rgba(250,250,250, 1);
+    /*animation: wave 125ms linear 125ms infinite;*/
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
