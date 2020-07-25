@@ -315,6 +315,7 @@ body.single-product.woocommerce a.button.alt::after, body.single-product.woocomm
     vertical-align: middle;
     float: left;
     font-size: 20px;
+    color: white;
 }
 
 #awooc-custom-order-button.awooc-custom-order.button.alt.show-add-to-card {
