@@ -16,19 +16,19 @@ class ProductExtensions
         $tabs['sort_tab'] = array(
             'title' 	=> __( 'Сорт винограда', 'woocommerce' ),
             'priority' 	=> 50,
-            'callback' 	=> array ( $this, 'display_varieties_info' )
+            'callback' 	=> array ( $this, 'displayVarietiesInfo' )
         );
 
         $tabs['faq'] = array(
             'title' 	=> __( 'ЧаВо', 'woocommerce' ),
             'priority' 	=> 51,
-            'callback' 	=> array ( $this, 'display_faq_info' )
+            'callback' 	=> array ( $this, 'displayFaqInfo' )
         );
 
         return $tabs;
     }
 
-    public function display_varieties_info()
+    public function displayVarietiesInfo()
     {
         global $product;
 
@@ -63,12 +63,47 @@ class ProductExtensions
         }
     }
 
-    public function display_faq_info(){
+    // Generator
+    private function faqArray($faq_title, $faq_text, $count)
+    {
+        for ($i=0; $i < $count; $i++ ) {
+            yield [ $faq_title[$i], $faq_text[$i] ];
+        }
+    }
+
+    public function displayFaqInfo(){
         global $product;
         $terms = wp_get_post_terms($product->get_id(), 'pa_sort', array());
+        // get custom fields for title and text
+        $faq_title = get_post_meta($product->get_id(), 'faq_tab_title', false);
+        $faq_text = get_post_meta($product->get_id(), 'faq_tab_text', false);
+
+        // check diffrent count fields for title and text couse unset field in pair
+        $count1 = count( $faq_title );
+        $count2 = count( $faq_text );
+
+        if ( $count1 >= $count2 && $count1 > 0 && $count2 > 0 ) {
+            $count = $count2;
+        } else $count = $count1;
         ?>
+
         <div class="faq-desc" itemscope itemtype="https://schema.org/FAQPage">
             <h3 class="main-faq-title">Часто задаваемые вопросы:</h3>
+      <?php foreach ( $this->faqArray($faq_title, $faq_text, $count) as $faq_info_product ) { ?>
+            <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h2 class="faq-title" itemprop="name">✅ <?=  $faq_info_product[0]; ?></h2>
+                <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="faq-text" itemprop="text">
+                        <?=  $faq_info_product[1]; ?>
+                    </p>
+                </div>
+            </div>
+
+                        <?php
+                    }
+//                endif;
+                ?>
+
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <h2 class="faq-title" itemprop="name">✅ Как быстро осуществляется доставка?</h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">

@@ -47,7 +47,8 @@ class LoopExtensions
         <?php
     }
 
-    public function archive_text_footer() {
+    public function archive_text_footer()
+    {
 
         if ( is_product_category( 'non-alcoholic-sparkling-wine' ) ) {
 
