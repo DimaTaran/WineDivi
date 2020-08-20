@@ -342,3 +342,6 @@ body.single-product.woocommerce a.button.alt::after, body.single-product.woocomm
 body div.product div.summary form.cart div.quantity {
     margin-right: 7px !important;
 }
+
+/*Change font size in product loops*/
+.woocommerce ul.products li.product h2.woocommerce-loop-product__title {font-size: 1.4em;}
