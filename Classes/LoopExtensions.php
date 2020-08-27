@@ -9,14 +9,20 @@ namespace WineDivi\Classes;
 class LoopExtensions
 {
     //attrib for display
-    public $attributes = ['sort' => 'Вид', 'color' => 'Цвет', 'grape_varieties' => 'Сорт', 'sweetness' => 'Сладость'];
+    private $attributes = ['sort' => 'Вид', 'color' => 'Цвет', 'grape_varieties' => 'Сорт', 'sweetness' => 'Сладость'];
+
+    // Generator for attr
+    private function getAttr()
+    {
+        yield from $this->attributes;
+    }
 
     public function get_term_string($product, $name_term, $taxonomy_name) {
         $var_name = 'term_' . $name_term;
         $$var_name = wp_get_post_terms( $product->get_id(), $taxonomy_name, array() );
         $name_term = [];
         foreach ( $$var_name as $term) {
-            $name_term[]= $term->name ;
+            $name_term[] = $term->name ;
         }
         return implode(', ', $name_term);
     }
@@ -27,8 +33,11 @@ class LoopExtensions
 
         ?>
         <table class="woocommerce-product-attributes shop_attributes">
-        <?php  foreach ($this->attributes as $attribute => $text_label) {
+        <?php
 
+        // Use generator
+        foreach ($this->getAttr() as $attribute => $text_label)
+        {
             // For problem term and taxonomy grape varieties
             $taxonomy_name =  'pa_'.$attribute;
             if ( $attribute == 'grape_varieties' ) {

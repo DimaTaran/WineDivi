@@ -71,6 +71,17 @@ class ProductExtensions
         }
     }
 
+    // For real array
+    private function faqArray2($faq_title, $faq_text, $count)
+    {
+        $array = [];
+        for ($i=0; $i < $count; $i++ ) {
+            $array[$i] = [ $faq_title[$i], $faq_text[$i] ];
+        }
+        return $array;
+
+    }
+
     public function displayFaqInfo(){
         global $product;
         $terms = wp_get_post_terms($product->get_id(), 'pa_sort', array());
@@ -125,8 +136,8 @@ class ProductExtensions
                 </div>
             </div>
             <?php endif;
-            if ($terms[0]->slug == 'sparkling'):
-            ?>
+
+            if ( $terms[0]->slug == 'sparkling' ): ?>
 
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <h2 class="faq-title" itemprop="name">✅ Как долго можно хранить безалкогольное шампанское после открытия?</h2>

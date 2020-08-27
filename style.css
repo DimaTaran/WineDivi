@@ -237,10 +237,15 @@ input[type=number]::-webkit-inner-spin-button {
     opacity: 1
 }
 
-@media screen and (min-width:590px) {
+/* Fix width menu on desktop */
+@media screen and (min-width:981px) {
     li#menu-item-1421 ul.sub-menu {
-        width: 500px;
-        right: 10%;
+        width: 750px;
+        left: -330px;
+    }
+    li#menu-item-2544 ul.sub-menu{
+        width: 485px;
+        top: -200px;
     }
 }
 

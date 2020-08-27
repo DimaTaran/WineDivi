@@ -78,6 +78,7 @@ class Telegram
     {
         return $this->token;
     }
+
     private function getUserID()
     {
         return $this->userID;
@@ -87,6 +88,7 @@ class Telegram
     {
         return $this->send_mode;
     }
+
     private function isSent()
     {
         if ( $this->getSentMode() == 'on') {
