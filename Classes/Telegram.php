@@ -3,6 +3,7 @@
 
 namespace WineDivi\Classes;
 
+//use function \wc_add_order_item_meta()
 
 class Telegram
 {
@@ -25,9 +26,10 @@ class Telegram
 
     public function sendMessages( $order_id )
     {
-        if ( $this->isSent() ) {
+        if ( $this->isSent() && ! $this->getOrderStatus( $order_id ) ) {
             $this->toTelegram( $order_id );
         }
+        $this->setOrderStatus( $order_id );
 
     }
 
@@ -95,6 +97,19 @@ class Telegram
             return true;
         } else return false;
 
+    }
+
+    private function setOrderStatus($order_id)
+    {
+        if ( ! $this->getOrderStatus( $order_id ) ) {
+            return update_post_meta( $order_id, 'telegram_sent', '1' );
+        }
+
+    }
+
+    public function getOrderStatus( $order_id )
+    {
+        return get_post_meta( $order_id, 'telegram_sent', $single = true );
     }
 
     private function toTelegram( $order_id )
