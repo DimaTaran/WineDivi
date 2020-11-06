@@ -1,6 +1,6 @@
 <?php
 
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+//remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart_new', 10 );
 
 function woocommerce_template_loop_add_to_cart_new() {
@@ -37,7 +37,7 @@ function woocommerce_template_loop_add_to_cart_new() {
             default :
                 $link 	= apply_filters( 'add_to_cart_url', esc_url( $product->add_to_cart_url() ) );
                 $label = $add_to_cart_text;
-                printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button add_to_cart_button product_type_%s">%s</a>', esc_url( $link ), $post->ID, $product->get_type(), $label);
+                printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button ajax_add_to_cart add_to_cart_button product_type_%s">%s</a>', esc_url( $link ), $post->ID, $product->get_type(), $label);
                 break;
         }
         ?>

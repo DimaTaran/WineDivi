@@ -43,6 +43,8 @@ $telegram->init();
 // delete woo style css from blog page
 add_action( 'wp_enqueue_scripts', array( $CustomEnqueueStyles, 'custom_manage_woo_styles' ), 99 );
 
+//add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 11 );
+
 // text on sparkling category
 add_action('woocommerce_after_shop_loop', array($LoopProductObject, 'archive_text_footer'), 12 );
 
