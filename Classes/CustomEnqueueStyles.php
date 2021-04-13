@@ -6,6 +6,9 @@ class CustomEnqueueStyles
 {
 
     public function custom_manage_woo_styles() {
+// Disable default CF7 CSS
+//add_filter( 'wpcf7_load_css', '__return_false' );
+
 
         if ( function_exists( 'is_woocommerce' ) ) {
 
@@ -18,7 +21,7 @@ class CustomEnqueueStyles
                 wp_dequeue_script( 'wc_price_slider' );
                 wp_dequeue_script( 'wc-single-product' );
                 wp_dequeue_script( 'wc-add-to-cart' );
-//                wp_dequeue_script( 'wc-cart-fragments' );
+                wp_dequeue_script( 'wc-cart-fragments' );
                 wp_dequeue_script( 'wc-checkout' );
                 wp_dequeue_script( 'wc-add-to-cart-variation' );
 //                wp_dequeue_script( 'wc-single-product' );

@@ -1,6 +1,6 @@
 <?php
 
-//remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
 add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart_new', 10 );
 
 function woocommerce_template_loop_add_to_cart_new() {
