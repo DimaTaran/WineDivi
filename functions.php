@@ -1,6 +1,6 @@
 <?php
 
-//require_once('vendor/autoload.php');
+require_once('vendor/autoload.php');
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
