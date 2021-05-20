@@ -5,8 +5,6 @@
         <div class="container">
             <div id="content-area" class="clearfix">
                 <div id="left-area">
-<!--                    <nav class="woocommerce-breadcrumb"><a href="http://1-learning-site.test">Home</a>&nbsp;/&nbsp;Акция</nav>-->
-
                     <header class="woocommerce-products-header"><h1 class="page-title">
                         <?php single_cat_title(); ?> </h1>
                             <?php
