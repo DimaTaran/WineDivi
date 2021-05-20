@@ -119,8 +119,16 @@ class ProductExtensions
                 <h2 class="faq-title" itemprop="name">✅ Как быстро осуществляется доставка?</h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text">
-                        Доставка на отделение Новой Почты осуществляется на следующий день. Доставка на отделение УкрПочты может идти 2-3 дня. Justin – 1-2 дня (сроки обсуждаются отдельно).
-                        Если заказ сделан до 15-00, нет форс-мажоров и все позиции есть в наличии, отправка осуществляется в тот же день.
+                        <?php _e('Доставка на отделение Новой Почты осуществляется на следующий день. Доставка на отделение УкрПочты может идти 2-3 дня. Justin – 1-2 дня (сроки обсуждаются отдельно).
+                        Если заказ сделан до 15-00, нет форс-мажоров и все позиции есть в наличии, отправка осуществляется в тот же день.', 'wine-divi'); ?>
+
+                    </p>
+                </div>
+            </div>
+            <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h2 class="faq-title" itemprop="name">✅ Как получить бесплатную доставку?</h2>
+                <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="faq-text" itemprop="text"><?php printf( __('Бесплатную доставку можно получить, заказав на сумму от %s грн', 'wine-divi'), do_shortcode('[free_shipping_amount]') ); ?>
                     </p>
                 </div>
             </div>
@@ -131,7 +139,9 @@ class ProductExtensions
                 <h2 class="faq-title" itemprop="name">✅ Как долго можно хранить открытое безалкогольное вино?</h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text">
-                        Конечно, безалкогольное шампанское будет игристым меньше, чем классическое, но в холодильнике со специальной пробкой сможет простоять до 2 дней.
+                        <?php _e('В среднем, безалкогольное вино, которое открыли, можно хранить столько же, сколько и обычное молодое вино, 2-3 дня в холодильнике с хорошо закрученной крышкой. Срок зависит от количества оставшегося вина и сладости, чем слаще 
+вино и чем больше его в бутылке, тем больше можно хранить. Если использовать вакуумную пробку, то срок хранения вырастет до 7 дней.
+', 'wine-divi'); ?>
                     </p>
                 </div>
             </div>
@@ -142,9 +152,7 @@ class ProductExtensions
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <h2 class="faq-title" itemprop="name">✅ Как долго можно хранить безалкогольное шампанское после открытия?</h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p class="faq-text" itemprop="text">
-                        Конечно, безалкогольное шампанское будет игристым меньше, чем классическое, но в холодильнике со специальной пробкой сможет простоять до 2 дней.
-                    </p>
+                    <p class="faq-text" itemprop="text"><?php _e('Конечно, безалкогольное шампанское будет игристым меньше, чем классическое, но в холодильнике со специальной пробкой сможет простоять до 2 дней.', 'wine-divi'); ?></p>
                 </div>
             </div>
             <?php endif; ?>
@@ -164,14 +172,16 @@ class ProductExtensions
         $units_sold = $this->getSalesCount();
         if ( $units_sold ) {
             echo sprintf(__("<p class='sell'>Продано: %s шт.</p>", 'woocommerce'), 5 * $units_sold);
-        } else echo '<p class="not-sell">' . sprintf( __( 'Продано: 0. Возможно это прекрасное вино - новинка и его еще не успели купить, станьте первым ценителем!')). '</p>';
+        } else echo '<p class="not-sell">' . sprintf( __( 'Продано: 0. Возможно это прекрасное вино - новинка и его еще не успели купить, станьте первым ценителем!', 'wine-divi' ) ). '</p>';
     }
 
     public function displaySalesCountCategory()
     {
         $units_sold = $this->getSalesCount();
-        if ( $units_sold )
-            echo sprintf(__("<p class='arch-sell'>Продано: %s шт.</p>", 'woocommerce'), 5 * $units_sold);
+        if ( $units_sold ) {
+            echo sprintf(__("<p class='arch-sell'>Продано: %s шт.</p>", 'wine-divi'), 5 * $units_sold);
+        } else echo '<p class="arch-sell">' . sprintf( __( 'Новинка!', 'wine-divi' ) ). '</p>';
+
     }
 
 }
