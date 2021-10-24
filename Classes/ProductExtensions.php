@@ -39,11 +39,12 @@ class ProductExtensions
             $desc = $term->description;
             $slug = $term->slug;
             $terms_attach = get_term_meta($term->term_id);
+            $image_id = '';
             if ( ! empty($terms_attach['showcase-taxonomy-image-id'][0] ) && ! is_wp_error( $terms_attach['showcase-taxonomy-image-id'][0] ) ) {
                 $image_id = $terms_attach['showcase-taxonomy-image-id'][0];
             }
 
-            $img_url = isset( $terms_attach['showcase-taxonomy-image-id'][0] ) ? wp_get_attachment_image_url( $image_id, 'Medium Large' ) : get_theme_file_uri() . '/img/default-grapes-img.png';
+            $img_url = ( isset( $terms_attach['showcase-taxonomy-image-id'][0] ) && ! empty( $terms_attach['showcase-taxonomy-image-id'][0] ))? wp_get_attachment_image_url( $image_id, 'Medium Large' ) : get_theme_file_uri() . '/img/default-grapes-img.png';
 
             ?>
             <section class="grapes-variety">
@@ -54,8 +55,7 @@ class ProductExtensions
                 <div class="grapes-variety_right wow fadeInUp">
                     <h2 class="grapes-variety-title"><?php echo $name ?></h2>
                     <p class="grapes-variety-desc"><?php echo $desc ?></p>
-                    <a href="/grape-varieties/<?php echo $slug; ?>" class="grapes-variety-link btn-link">Все вина этого
-                        сорта</a>
+                    <a href="/grape-varieties/<?php echo $slug; ?>" class="grapes-variety-link btn-link"><?php _e('Все вина этого сорта', 'wine-divi'); ?></a>
                 </div> <!-- .producer__in -->
             </section> <!-- .producer -->
             <!--     <hr>-->
@@ -99,7 +99,7 @@ class ProductExtensions
         ?>
 
         <div class="faq-desc" itemscope itemtype="https://schema.org/FAQPage">
-            <h3 class="main-faq-title">Часто задаваемые вопросы:</h3>
+            <h3 class="main-faq-title"><?php _e('Часто задаваемые вопросы:', 'wine-divi'); ?></h3>
       <?php foreach ( $this->faqArray($faq_title, $faq_text, $count) as $faq_info_product ) { ?>
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                 <h2 class="faq-title" itemprop="name">✅ <?=  $faq_info_product[0]; ?></h2>
@@ -109,14 +109,10 @@ class ProductExtensions
                     </p>
                 </div>
             </div>
-
-                        <?php
-                    }
-//                endif;
-                ?>
+          <?php } ?>
 
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h2 class="faq-title" itemprop="name">✅ Как быстро осуществляется доставка?</h2>
+                <h2 class="faq-title" itemprop="name">✅ <?php _e('Как быстро осуществляется доставка?', 'wine-divi'); ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text">
                         <?php _e('Доставка на отделение Новой Почты осуществляется на следующий день. Доставка на отделение УкрПочты может идти 2-3 дня. Justin – 1-2 дня (сроки обсуждаются отдельно).
@@ -126,7 +122,7 @@ class ProductExtensions
                 </div>
             </div>
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h2 class="faq-title" itemprop="name">✅ Как получить бесплатную доставку?</h2>
+                <h2 class="faq-title" itemprop="name">✅ <?php _e('Как получить бесплатную доставку?', 'wine-divi'); ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text"><?php printf( __('Бесплатную доставку можно получить, заказав на сумму от %s грн', 'wine-divi'), do_shortcode('[free_shipping_amount]') ); ?>
                     </p>
@@ -136,7 +132,7 @@ class ProductExtensions
             <?php if ( $terms[0]->slug == 'still' ): ?>
 
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h2 class="faq-title" itemprop="name">✅ Как долго можно хранить открытое безалкогольное вино?</h2>
+                <h2 class="faq-title" itemprop="name">✅ <?php _e('Как долго можно хранить открытое безалкогольное вино?', 'wine-divi'); ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text">
                         <?php _e('В среднем, безалкогольное вино, которое открыли, можно хранить столько же, сколько и обычное молодое вино, 2-3 дня в холодильнике с хорошо закрученной крышкой. Срок зависит от количества оставшегося вина и сладости, чем слаще 
@@ -150,7 +146,7 @@ class ProductExtensions
             if ( $terms[0]->slug == 'sparkling' ): ?>
 
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h2 class="faq-title" itemprop="name">✅ Как долго можно хранить безалкогольное шампанское после открытия?</h2>
+                <h2 class="faq-title" itemprop="name">✅ <?php _e('Как долго можно хранить безалкогольное шампанское после открытия?', 'wine-divi'); ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text"><?php _e('Конечно, безалкогольное шампанское будет игристым меньше, чем классическое, но в холодильнике со специальной пробкой сможет простоять до 2 дней.', 'wine-divi'); ?></p>
                 </div>

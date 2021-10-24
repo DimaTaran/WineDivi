@@ -25,22 +25,22 @@ function woocommerce_template_loop_add_to_cart_new() {
                 woocommerce_variable_add_to_cart();
                 break;
             case "grouped" :
-                $link 	= apply_filters( 'grouped_add_to_cart_url', get_permalink( $post->ID ) );
+                $link 	= apply_filters( 'grouped_add_to_cart_url', get_permalink( $product->get_id() ) );
                 $label 	= apply_filters( 'grouped_add_to_cart_text', __('Посмотреть опции', 'woocommerce') );
-                printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button add_to_cart_button product_type_%s">%s</a>', esc_url( $link ), $post->ID, $product->get_type(), $label);
+                printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button add_to_cart_button product_type_%s">%s</a>', esc_url( $link ), $product->get_id(), $product->get_type(), $label);
                 break;
             case "external" :
-                $link 	= apply_filters( 'external_add_to_cart_url', get_permalink( $product->id ) );
+                $link 	= apply_filters( 'external_add_to_cart_url', get_permalink( $product->get_id() ) );
                 $label 	= apply_filters( 'external_add_to_cart_text', __('Читать далее', 'woocommerce') );
-                printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button add_to_cart_button product_type_%s">%s</a>', esc_url( $link ), $post->ID, $product->get_type(), $label);
+                printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button add_to_cart_button product_type_%s">%s</a>', esc_url( $link ), $product->get_id(), $product->get_type(), $label);
                 break;
             default :
                 $link 	= apply_filters( 'add_to_cart_url', esc_url( $product->add_to_cart_url() ) );
                 $label = $add_to_cart_text;
-                printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button ajax_add_to_cart add_to_cart_button product_type_%s">%s</a>', esc_url( $link ), $post->ID, $product->get_type(), $label);
+                printf('<a href="%s" rel="nofollow" data-product_id="%s" class="button ajax_add_to_cart add_to_cart_button product_type_%s">%s</a>', esc_url( $link ), $product->get_id(), $product->get_type(), $label);
                 break;
         }
         ?>
     </div>
-    <?
+    <?php
 }
