@@ -1,0 +1,93 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WineDivi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-10 16:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.3; wp-5.8.1\n"
+"X-Domain: wine-divi"
+
+#: Classes/ProductExtensions.php:182
+#, php-format
+msgid "<p class='arch-sell'>Продано: %s шт.</p>"
+msgstr ""
+
+#. Author of the theme
+msgid "Dima Taran"
+msgstr ""
+
+#. Description of the theme
+msgid "Divi Child Theme"
+msgstr ""
+
+#. Name of the theme
+msgid "WineDivi"
+msgstr ""
+
+#: Classes/ProductExtensions.php:131
+#, php-format
+msgid "Бесплатную доставку можно получить, заказав на сумму от %s грн"
+msgstr ""
+
+#: Classes/ShopCustomOrder.php:31
+msgid "В наличии"
+msgstr ""
+
+#: Classes/ProductExtensions.php:142
+msgid ""
+"В среднем, безалкогольное вино, которое открыли, можно хранить столько же, "
+"сколько и обычное молодое вино, 2-3 дня в холодильнике с хорошо закрученной "
+"крышкой. Срок зависит от количества оставшегося вина и сладости, чем слаще \n"
+"вино и чем больше его в бутылке, тем больше можно хранить. Если использовать "
+"вакуумную пробку, то срок хранения вырастет до 7 дней.\n"
+msgstr ""
+
+#: Classes/ProductExtensions.php:122
+msgid ""
+"Доставка на отделение Новой Почты осуществляется на следующий день. Доставка "
+"на отделение УкрПочты может идти 2-3 дня. Justin – 1-2 дня (сроки "
+"обсуждаются отдельно).\n"
+"                        Если заказ сделан до 15-00, нет форс-мажоров и все "
+"позиции есть в наличии, отправка осуществляется в тот же день."
+msgstr ""
+
+#: Classes/Telegram.php:67
+msgid "Заказ #"
+msgstr ""
+
+#: Classes/ProductExtensions.php:155
+msgid ""
+"Конечно, безалкогольное шампанское будет игристым меньше, чем классическое, "
+"но в холодильнике со специальной пробкой сможет простоять до 2 дней."
+msgstr ""
+
+#: Classes/LoopExtensions.php:116
+msgid ""
+"Мы доставляем безалкогольное вино во все города Украины! В Киев, Днепр, "
+"Запорожье, Одесса, Александрия, Кропивницький, Мелитополь, Каменское, Кривой "
+"Рог, Мариуполь, Одесса, Белая Церковь, Кременчуг, Черкассы, Бровари, "
+"Бердянски, Чернигов, Павлоград, Суми, Полтава время доставки 1-2 дня, как "
+"правило, заказ приходит на следующий день после отправки.\n"
+"В города Умань, Николаев, Херсон, Новая Каховка, Тернополь, Хмельницкий, "
+"Черновци, Мукачево, Стрий, Ковель, Винница, Ужгород, Луцьк, Львів, Івано-"
+"Франківськ заказ придет через 2 дня."
+msgstr ""
+
+#: Classes/ProductExtensions.php:183
+msgid "Новинка!"
+msgstr ""
+
+#: Classes/ProductExtensions.php:175
+msgid ""
+"Продано: 0. Возможно это прекрасное вино - новинка и его еще не успели "
+"купить, станьте первым ценителем!"
+msgstr ""
