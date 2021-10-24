@@ -23,6 +23,7 @@ use WineDivi\Classes\LoopExtensions;
 use WineDivi\Classes\ProductExtensions;
 use WineDivi\Classes\GeneralClasses;
 use WineDivi\Classes\Telegram;
+use WineDivi\Classes\ShopCustomOrder;
 
 
 // Instances of Classes
@@ -30,7 +31,7 @@ $ProductExtensions = new ProductExtensions();
 $LoopProductObject = new LoopExtensions();
 $CustomEnqueueStyles = new CustomEnqueueStyles();
 $telegram =  new Telegram();
-
+$customOrder = new ShopCustomOrder();
 //  free_shipping_amount_shortcode do
 //$free_shop_amount = new WC_Shipping_Free_Shipping(1);
 $GeneralClasses = new GeneralClasses(new WC_Shipping_Free_Shipping(1));

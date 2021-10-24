@@ -10,11 +10,13 @@ class ComposerStaticInit836da21d772f5539446b895e3a0ab1c0
         'ComposerAutoloaderInit836da21d772f5539446b895e3a0ab1c0' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit836da21d772f5539446b895e3a0ab1c0' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'DiviClasses\\Options' => __DIR__ . '/../..' . '/DiviClasses/Options.php',
         'WineDivi\\Classes\\CustomEnqueueStyles' => __DIR__ . '/../..' . '/Classes/CustomEnqueueStyles.php',
         'WineDivi\\Classes\\GeneralClasses' => __DIR__ . '/../..' . '/Classes/GeneralClasses.php',
         'WineDivi\\Classes\\LoopExtensions' => __DIR__ . '/../..' . '/Classes/LoopExtensions.php',
         'WineDivi\\Classes\\ProductExtensions' => __DIR__ . '/../..' . '/Classes/ProductExtensions.php',
+        'WineDivi\\Classes\\ShopCustomOrder' => __DIR__ . '/../..' . '/Classes/ShopCustomOrder.php',
         'WineDivi\\Classes\\Telegram' => __DIR__ . '/../..' . '/Classes/Telegram.php',
     );
 

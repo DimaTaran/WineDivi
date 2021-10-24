@@ -9,10 +9,12 @@ return array(
     'ComposerAutoloaderInit836da21d772f5539446b895e3a0ab1c0' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit836da21d772f5539446b895e3a0ab1c0' => $vendorDir . '/composer/autoload_static.php',
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'DiviClasses\\Options' => $baseDir . '/DiviClasses/Options.php',
     'WineDivi\\Classes\\CustomEnqueueStyles' => $baseDir . '/Classes/CustomEnqueueStyles.php',
     'WineDivi\\Classes\\GeneralClasses' => $baseDir . '/Classes/GeneralClasses.php',
     'WineDivi\\Classes\\LoopExtensions' => $baseDir . '/Classes/LoopExtensions.php',
     'WineDivi\\Classes\\ProductExtensions' => $baseDir . '/Classes/ProductExtensions.php',
+    'WineDivi\\Classes\\ShopCustomOrder' => $baseDir . '/Classes/ShopCustomOrder.php',
     'WineDivi\\Classes\\Telegram' => $baseDir . '/Classes/Telegram.php',
 );
