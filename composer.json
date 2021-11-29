@@ -1,9 +1,11 @@
 {
+
     "autoload": {
-        "classmap": [
-            "vendor",
-            "Classes",
-            "DiviClasses"
-        ]
+        "psr-4": {
+            "WineDivi\\Classes\\": "Classes",
+            "DiviClasses\\": "DiviClasses"
+        }
     }
+
+
 }

@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'WineDivi\\Classes\\' => array($baseDir . '/Classes'),
+    'DiviClasses\\' => array($baseDir . '/DiviClasses'),
 );

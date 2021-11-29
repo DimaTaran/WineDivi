@@ -6,23 +6,37 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit836da21d772f5539446b895e3a0ab1c0
 {
+    public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'WineDivi\\Classes\\' => 17,
+        ),
+        'D' => 
+        array (
+            'DiviClasses\\' => 12,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'WineDivi\\Classes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Classes',
+        ),
+        'DiviClasses\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/DiviClasses',
+        ),
+    );
+
     public static $classMap = array (
-        'ComposerAutoloaderInit836da21d772f5539446b895e3a0ab1c0' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
-        'Composer\\Autoload\\ComposerStaticInit836da21d772f5539446b895e3a0ab1c0' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'DiviClasses\\Options' => __DIR__ . '/../..' . '/DiviClasses/Options.php',
-        'WineDivi\\Classes\\CustomEnqueueStyles' => __DIR__ . '/../..' . '/Classes/CustomEnqueueStyles.php',
-        'WineDivi\\Classes\\GeneralClasses' => __DIR__ . '/../..' . '/Classes/GeneralClasses.php',
-        'WineDivi\\Classes\\LoopExtensions' => __DIR__ . '/../..' . '/Classes/LoopExtensions.php',
-        'WineDivi\\Classes\\ProductExtensions' => __DIR__ . '/../..' . '/Classes/ProductExtensions.php',
-        'WineDivi\\Classes\\ShopCustomOrder' => __DIR__ . '/../..' . '/Classes/ShopCustomOrder.php',
-        'WineDivi\\Classes\\Telegram' => __DIR__ . '/../..' . '/Classes/Telegram.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit836da21d772f5539446b895e3a0ab1c0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit836da21d772f5539446b895e3a0ab1c0::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit836da21d772f5539446b895e3a0ab1c0::$classMap;
 
         }, null, ClassLoader::class);
