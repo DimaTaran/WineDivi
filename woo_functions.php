@@ -77,3 +77,22 @@ add_action( 'woocommerce_after_shop_loop_item_title', array( $ProductExtensions,
 
 // display attributes in  menu
 add_filter('woocommerce_attribute_show_in_nav_menus', array( $GeneralClasses, 'attrForMenus' ), 1, 2);
+
+define('SAPHALI_LITE_SYMBOL', 1 );
+add_filter( 'woocommerce_currency_symbol',  'add_inr_currency_symbol', 1, 2 );
+function add_inr_currency_symbol( $symbol , $currency ) {
+    if(empty($currency))
+        $currency = get_option( 'woocommerce_currency' );
+    if(isset($currency)) {
+        if ( version_compare( WOOCOMMERCE_VERSION, '2.5.2', '<' ) || SAPHALI_LITE_SYMBOL ):
+            switch( $currency ) {
+                case 'UAH': $symbol = '&#x433;&#x440;&#x43D;.'; break;
+            }
+        else:
+            switch( $currency ) {
+                case 'UAH': $symbol = '&#x433;&#x440;&#x43D;.'; break;
+            }
+        endif;
+    }
+    return $symbol;
+}
