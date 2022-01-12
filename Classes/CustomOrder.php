@@ -19,6 +19,11 @@ class CustomOrder
                 <h3><?php esc_html_e( 'Новая почта', 'wine-divi' ); ?></h3>
                 <p><?php echo $last_name . ' '  . $first_name; ?></p></div>
             <?php
+            if ( $old_nova = $order->get_meta('_billing_new_fild11') ) {
+                echo '<p>НП старый №: ' .   $old_nova . '</p>';
+            }
+            ?>
+            <?php
         }
     }
 
