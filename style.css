@@ -410,3 +410,43 @@ p.form-group textarea {
         margin-top: 60px;
     }
 }
+
+span.selection {
+    position: relative;
+}
+
+.woocommerce form .form-row select {
+    padding: 15px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+select#billing_nova_poshta_region, span.select2-selection.select2-selection--single {
+    height: 50px;
+    width: 100% !important;
+    border-radius: 5px;
+    font-size: 16px !important;
+}
+
+span.select2-selection.select2-selection--single {
+    display: flex;
+    align-items: center;
+    height: 50px !important;
+    justify-content: space-between;
+}
+
+body span.selection span.select2-selection__arrow {
+    display: flex;
+    align-items: center;
+    position: relative !important;
+    left: 0;
+    padding-right: 5px;
+}
+
+span.select2-selection__arrow b {
+
+}
+
+h3#order_review_heading {
+    margin-top:15px;
+}
