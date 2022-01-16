@@ -53,7 +53,7 @@ class Telegram
         $user_info .= 'Имя: ' . $order->get_billing_first_name() . ' ' . $order->get_billing_last_name() . ' ';
         $user_info .= 'Тел: ' .  $order->get_billing_phone() . ' ';
         $user_info .= 'Город: ' .  $order->get_billing_city() . ' ';
-        $user_info .= 'НП: ' .  $order->get_meta('_billing_new_fild11') . ' ';
+        $user_info .= 'НП: ' .  $order->get_billing_address_1() . ' ';
         $user_info .= esc_html__('Payment method:', 'woocommerce') . ' ' .  $order->get_payment_method_title() . ' ';
         unset( $order );
         return  $user_info;
