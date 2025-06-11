@@ -23,6 +23,10 @@ use WineDivi\Classes\LoopExtensions;
 use WineDivi\Classes\ProductExtensions;
 use WineDivi\Classes\GeneralClasses;
 use WineDivi\Classes\Telegram;
+use WineDivi\Classes\ShopCustomOrder;
+use WineDivi\Classes\CustomOrder;
+
+
 
 
 // Instances of Classes
@@ -30,10 +34,25 @@ $ProductExtensions = new ProductExtensions();
 $LoopProductObject = new LoopExtensions();
 $CustomEnqueueStyles = new CustomEnqueueStyles();
 $telegram =  new Telegram();
+$customOrder = new ShopCustomOrder();
+$order = new CustomOrder();
+
+
 
 //  free_shipping_amount_shortcode do
 //$free_shop_amount = new WC_Shipping_Free_Shipping(1);
-$GeneralClasses = new GeneralClasses(new WC_Shipping_Free_Shipping(1));
+	if (class_exists('WC_Shipping_Free_Shipping')) {
+		$GeneralClasses = new GeneralClasses(new WC_Shipping_Free_Shipping(1));
+		
+		//Add checked on checkout page to terms
+		add_filter('woocommerce_terms_is_checked_default',  array( $GeneralClasses, 'termsChecked' ) );
+		
+		// display attributes in  menu
+		add_filter('woocommerce_attribute_show_in_nav_menus', array( $GeneralClasses, 'attrForMenus' ), 1, 2);
+	
+	}
+	
+
 
 
 // send messages on Telegram and other messangers
@@ -55,9 +74,6 @@ add_action('woocommerce_after_shop_loop_item_title', array( $LoopProductObject, 
 //Add a custom product data tab
 add_filter( 'woocommerce_product_tabs', array( $ProductExtensions, 'woo_new_product_tab' ) );
 
-//Add chaeccked on checkout page to terms
-add_filter('woocommerce_terms_is_checked_default',  array( $GeneralClasses, 'termsChecked' ) );
-
 // add woo advance search form fom mobile
 add_action( 'et_header_top', array($CustomEnqueueStyles, 'add_mobile_search'), 20 );
 
@@ -67,5 +83,22 @@ add_action( 'woocommerce_single_product_summary', array( $ProductExtensions, 'di
 //display product sales on category product page
 add_action( 'woocommerce_after_shop_loop_item_title', array( $ProductExtensions, 'displaySalesCountCategory' ), 11 );
 
-// display attributes in  menu
-add_filter('woocommerce_attribute_show_in_nav_menus', array( $GeneralClasses, 'attrForMenus' ), 1, 2);
+define('SAPHALI_LITE_SYMBOL', 1 );
+
+add_filter( 'woocommerce_currency_symbol',  'add_inr_currency_symbol', 1, 2 );
+function add_inr_currency_symbol( $symbol , $currency ) {
+    if(empty($currency))
+        $currency = get_option( 'woocommerce_currency' );
+    if(isset($currency)) {
+        if ( version_compare( WOOCOMMERCE_VERSION, '2.5.2', '<' ) || SAPHALI_LITE_SYMBOL ):
+            switch( $currency ) {
+                case 'UAH': $symbol = '&#x433;&#x440;&#x43D;.'; break;
+            }
+        else:
+            switch( $currency ) {
+                case 'UAH': $symbol = '&#x433;&#x440;&#x43D;.'; break;
+            }
+        endif;
+    }
+    return $symbol;
+}

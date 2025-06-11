@@ -105,26 +105,26 @@ class ProductExtensions
                 <h2 class="faq-title" itemprop="name">✅ <?=  $faq_info_product[0]; ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text">
-                        <?=  $faq_info_product[1]; ?>
+                        <?= $faq_info_product[1]; ?>
                     </p>
                 </div>
             </div>
           <?php } ?>
 
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h2 class="faq-title" itemprop="name">✅ <?php _e('Как быстро осуществляется доставка?', 'wine-divi'); ?></h2>
+                <h2 class="faq-title" itemprop="name">✅ <?php _e('Як швидко робиться доставка?', 'wine-divi'); ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text">
-                        <?php _e('Доставка на отделение Новой Почты осуществляется на следующий день. Доставка на отделение УкрПочты может идти 2-3 дня. Justin – 1-2 дня (сроки обсуждаются отдельно).
-                        Если заказ сделан до 15-00, нет форс-мажоров и все позиции есть в наличии, отправка осуществляется в тот же день.', 'wine-divi'); ?>
+                        <?php _e('Доставка на віділення Нової Пошти виконується відповідно роскладу доставок Нової Пошти, як правило наступного дня після відправки.
+                        Відправки виконуються як правило з ранку, на протязі дня замовлення збираються та обробляються.', 'wine-divi'); ?>
 
                     </p>
                 </div>
             </div>
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h2 class="faq-title" itemprop="name">✅ <?php _e('Как получить бесплатную доставку?', 'wine-divi'); ?></h2>
+                <h2 class="faq-title" itemprop="name">✅ <?php _e('Як отримати безкоштовну доставку?', 'wine-divi'); ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p class="faq-text" itemprop="text"><?php printf( __('Бесплатную доставку можно получить, заказав на сумму от %s грн', 'wine-divi'), do_shortcode('[free_shipping_amount]') ); ?>
+                    <p class="faq-text" itemprop="text"><?php printf( __('Безкоштовна доставка виконується при замовленні на суму більш %s грн', 'wine-divi'), do_shortcode('[free_shipping_amount]') ); ?>
                     </p>
                 </div>
             </div>
@@ -132,11 +132,10 @@ class ProductExtensions
             <?php if ( $terms[0]->slug == 'still' ): ?>
 
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h2 class="faq-title" itemprop="name">✅ <?php _e('Как долго можно хранить открытое безалкогольное вино?', 'wine-divi'); ?></h2>
+                <h2 class="faq-title" itemprop="name">✅ <?php _e('Скільки можна зберігати відкриті безалкогольні вина?', 'wine-divi'); ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                     <p class="faq-text" itemprop="text">
-                        <?php _e('В среднем, безалкогольное вино, которое открыли, можно хранить столько же, сколько и обычное молодое вино, 2-3 дня в холодильнике с хорошо закрученной крышкой. Срок зависит от количества оставшегося вина и сладости, чем слаще 
-вино и чем больше его в бутылке, тем больше можно хранить. Если использовать вакуумную пробку, то срок хранения вырастет до 7 дней.
+                        <?php _e('У середньому безалкогольне вино після відкриття зберігається стільки ж, скільки й звичайне молоде вино — 2–3 дні в холодильнику за умови, що пляшка щільно закрита. Тривалість зберігання залежить від кількості вина, що залишилося, та його солодкості: чим солодше вино і чим більше його в пляшці, тим довше його можна зберігати. Якщо використати вакуумну пробку, термін зберігання збільшується до 7 днів.
 ', 'wine-divi'); ?>
                     </p>
                 </div>
@@ -146,9 +145,9 @@ class ProductExtensions
             if ( $terms[0]->slug == 'sparkling' ): ?>
 
             <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <h2 class="faq-title" itemprop="name">✅ <?php _e('Как долго можно хранить безалкогольное шампанское после открытия?', 'wine-divi'); ?></h2>
+                <h2 class="faq-title" itemprop="name">✅ <?php _e('Скільки можна зберігати безалкогольне шампанське після відкриття?', 'wine-divi'); ?></h2>
                 <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p class="faq-text" itemprop="text"><?php _e('Конечно, безалкогольное шампанское будет игристым меньше, чем классическое, но в холодильнике со специальной пробкой сможет простоять до 2 дней.', 'wine-divi'); ?></p>
+                    <p class="faq-text" itemprop="text"><?php _e('Звісно, безалкогольне шампанське зберігає ігристість менше, ніж класичне, але в холодильнику зі спеціальною пробкою воно може простояти до 2 днів.', 'wine-divi'); ?></p>
                 </div>
             </div>
             <?php endif; ?>
@@ -168,7 +167,7 @@ class ProductExtensions
         $units_sold = $this->getSalesCount();
         if ( $units_sold ) {
             echo sprintf(__("<p class='sell'>Продано: %s шт.</p>", 'woocommerce'), 5 * $units_sold);
-        } else echo '<p class="not-sell">' . sprintf( __( 'Продано: 0. Возможно это прекрасное вино - новинка и его еще не успели купить, станьте первым ценителем!', 'wine-divi' ) ). '</p>';
+        } else echo '<p class="not-sell">' . sprintf( __( 'Продано: 0. Можливо, це чудове вино — новинка, яку ще не встигли придбати. Станьте першим шанувальником!', 'wine-divi' ) ). '</p>';
     }
 
     public function displaySalesCountCategory()
