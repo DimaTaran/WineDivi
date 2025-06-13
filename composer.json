@@ -1,8 +1,23 @@
 {
+    "name": "taran/winedivi",
+    "description": "Child theme winedivi for Divi WordPress theme with custom PHP classes and deployment tools.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Dmitry Taran",
+            "email": "taran_da@ukr.net"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "WineDivi\\Classes\\": "Classes",
-            "DiviClasses\\": "DiviClasses"
+            "WineDivi\\Classes\\": "Classes/",
+            "DiviClasses\\": "DiviClasses/"
         }
-    }
+    },
+    "require-dev": {
+        "laravel/envoy": "^2.10"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
+
