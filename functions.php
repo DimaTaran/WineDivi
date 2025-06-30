@@ -17,40 +17,40 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 require_once 'divi_functions.php';
 	
-	add_filter('woocommerce_csv_product_import_mapping_options', function ($columns) {
-		$columns['brand_desc'] = __( 'Brand Description', 'woocommerce' );
-		return $columns;
-	});
-	
-	add_filter( 'woocommerce_csv_product_import_mapping_default_columns', function ($mappings) {
-		$new_mapping = array( __( 'Brand Description', 'woocommerce' ) => 'brand_desc' );
-		return array_merge( $mappings, $new_mapping );
-	});
-	
-	
-	add_action('woocommerce_product_import_inserted_product_object', function($product, $data) {
-		if ( empty( $data['brand_ids'] ) || empty( $data['brand_desc'] ) ) {
-			return;
-		}
-		$desc = $desc1 = $data['brand_desc'];
-		if ( empty( $desc ) ) {
-			return;
-		}
-		
-		$desc = wc_format_product_short_description( $desc );
-//		$desc1 = parse_description_field( $desc1 );
-//		$desc11 = wc_sanitize_term_text_based( $desc1 );
-//		$desc2 = sanitize_text_field( $desc1 );
-//		$desc3 = wc_format_product_short_description( $desc1 );
-//		$desc4 = wp_filter_post_kses( $desc1 );
-		$brand_obj = $GLOBALS['WC_Brands_Admin'];
-		$brand_ids = array_map( 'intval', $brand_obj->parse_brands_field( $data['brand_ids'] ) );
-		remove_filter('pre_term_description', 'wp_filter_kses');
-		remove_filter('term_description', 'wp_kses_data');
-		$result = update_brand_descriptions($brand_ids,  $desc);
-		apply_filters('pre_term_description', 'wp_filter_kses');
-		apply_filters('term_description', 'wp_kses_data');
-	}, 9, 2);
+//	add_filter('woocommerce_csv_product_import_mapping_options', function ($columns) {
+//		$columns['brand_desc'] = __( 'Brand Description', 'woocommerce' );
+//		return $columns;
+//	});
+//
+//	add_filter( 'woocommerce_csv_product_import_mapping_default_columns', function ($mappings) {
+//		$new_mapping = array( __( 'Brand Description', 'woocommerce' ) => 'brand_desc' );
+//		return array_merge( $mappings, $new_mapping );
+//	});
+
+//
+//	add_action('woocommerce_product_import_inserted_product_object', function($product, $data) {
+//		if ( empty( $data['brand_ids'] ) || empty( $data['brand_desc'] ) ) {
+//			return;
+//		}
+//		$desc = $desc1 = $data['brand_desc'];
+//		if ( empty( $desc ) ) {
+//			return;
+//		}
+//
+//		$desc = wc_format_product_short_description( $desc );
+////		$desc1 = parse_description_field( $desc1 );
+////		$desc11 = wc_sanitize_term_text_based( $desc1 );
+////		$desc2 = sanitize_text_field( $desc1 );
+////		$desc3 = wc_format_product_short_description( $desc1 );
+////		$desc4 = wp_filter_post_kses( $desc1 );
+//		$brand_obj = $GLOBALS['WC_Brands_Admin'];
+//		$brand_ids = array_map( 'intval', $brand_obj->parse_brands_field( $data['brand_ids'] ) );
+//		remove_filter('pre_term_description', 'wp_filter_kses');
+//		remove_filter('term_description', 'wp_kses_data');
+//		$result = update_brand_descriptions($brand_ids,  $desc);
+//		apply_filters('pre_term_description', 'wp_filter_kses');
+//		apply_filters('term_description', 'wp_kses_data');
+//	}, 9, 2);
 	
 	
 	
