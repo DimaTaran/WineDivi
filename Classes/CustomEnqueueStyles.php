@@ -43,7 +43,7 @@ class CustomEnqueueStyles
 
     public function add_mobile_search(){
 
-        if (is_shop() || is_archive() ||  is_front_page()) {
+        if (is_shop() || is_archive() ||  is_front_page() || is_product()) {
             ?>
             <div class="search-mobile">
                 <form role="search" method="get" class="et-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">

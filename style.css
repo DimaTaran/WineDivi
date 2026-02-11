@@ -7,7 +7,7 @@
  Text Domain:  wine-divi
 */
 
-@import url("../Divi/style.css");
+/*@import url("../Divi/style.css");*/
 
 input[type=number]::-webkit-inner-spin-button {
     opacity: 1
@@ -101,6 +101,7 @@ p.grapes-variety-desc {
     body #page-container #top-header {
             position: fixed;
         }
+
     body #page-container #top-header .container.clearfix {
         display: flex;
         flex-wrap: nowrap;
@@ -160,10 +161,6 @@ p.arch-sell {color:#666 !important;}
 .archive.woocommerce .wrappefr-slide a.button:hover {
     background: rgba(0,0,0,.05) !important;
     color: #7cc68d !important;
-}
-
-.woocommerce.et_pb_button_helper_class a.button, .woocommerce-page.et_pb_button_helper_class a.button {
-
 }
 
 .home .woocommerce .wrappefr-slide a.button:hover {
@@ -249,11 +246,11 @@ input[type=number]::-webkit-inner-spin-button {
     }
 }
 
-@media screen and (max-width:479px) {
-    .woocommerce ul.products[class*="columns-"] li.product {
-        width: 100% !important;
-    }
-}
+/*@media screen and (max-width:479px) {*/
+/*    .woocommerce ul.products[class*="columns-"] li.product {*/
+/*        width: 100% !important;*/
+/*    }*/
+/*}*/
 
 /*For input mark in cart*/
 input::-webkit-inner-spin-button {  -webkit-appearance: button;    display: block;    width: 10px;    opacity: 1;  background-color: white; color:grey;}
@@ -448,4 +445,10 @@ span.select2-selection__arrow b {
 }
 h3#order_review_heading {
     margin-top:15px;
+}
+
+@media (max-width: 479px) {
+    .woocommerce-page ul.products li.product:nth-child(n) {
+        width: 45.25% !important;
+    }
 }
