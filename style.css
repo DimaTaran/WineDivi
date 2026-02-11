@@ -123,18 +123,12 @@ p.grapes-variety-desc {
     body #page-container #top-header .container.clearfix #et-info {
         margin-right: 10%;
     }
-
 }
-
-
 
 @media screen and (max-width: 600px){
     .search-mobile form.aws-search-form {
         max-width: 100%;
     }
-
-
-
 }
 
 .clear-both {
@@ -148,25 +142,6 @@ div.summary p.sell {font-size: 1.5em; margin-bottom: 0.5em;}
 p.not-sell {font-size: 1.5em; margin-bottom: 1.5em;}
 p.arch-sell {color:#666 !important;}
 .wrappefr-slide{text-align: center}
-
-.woocommerce .wrappefr-slide a.button, .woocommerce .product .star-rating span::before {
-    color: #7cc68d !important;
-}
-.archive.woocommerce .wrappefr-slide a.button, .single-product.et_color_scheme_green.woocommerce .wrappefr-slide a.button,
-.single-product.et_color_scheme_green.woocommerce-page a.button {
-    background: transparent !important;
-}
-
-
-.archive.woocommerce .wrappefr-slide a.button:hover {
-    background: rgba(0,0,0,.05) !important;
-    color: #7cc68d !important;
-}
-
-.home .woocommerce .wrappefr-slide a.button:hover {
-    background: rgba(0,0,0,.05);
-    color: #7cc68d !important;
-}
 
 
  /*List Styles*/
