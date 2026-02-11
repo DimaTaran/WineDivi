@@ -309,10 +309,6 @@ body p.footer-city {
 
 /* 1 Click  */
 
-body.single-product.woocommerce a.button.alt::after, body.single-product.woocommerce a.button::after {
-    left: 100px;
-}
-
 .woocommerce div.product form.cart .button {
     vertical-align: middle;
     float: left;
@@ -336,10 +332,6 @@ body.single-product.woocommerce a.button.alt::after, body.single-product.woocomm
     /*padding-right: 40px;*/
     padding: .3em 1.5em .3em 0.4em;
 }
-body.single-product.woocommerce a.button.alt::after, body.single-product.woocommerce a.button::after {
-    left: 90px;
-}
-
 
 body div.product div.summary form.cart div.quantity {
     margin-right: 7px !important;
