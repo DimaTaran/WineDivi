@@ -10,8 +10,6 @@ require_once('vendor/autoload.php');
 // load files with function
 require_once('attr_function/image-to-attr.php');
 require_once('product_function/add-to-cart.php');
-require_once ('cart_func/free_ship_display.php');
-
 
 // includes CONSTANS
 require_once "product_function/constans.php";
