@@ -22,7 +22,48 @@ class Telegram
     public function init()
     {
         add_action( 'woocommerce_thankyou',  array( $this, 'sendMessages' ) );
+	    
+	    // Хук срабатывает при создании заказа
+	    add_action( 'woocommerce_checkout_order_processed', array( $this, 'sendMessagesToNotLogUser' ), 10, 3 );
+	    
+	    // Альтернативно можно использовать:
+	    // add_action( 'woocommerce_new_order', array( $this, 'sendMessagesToNotLogUser' ), 10, 1 );
     }
+	
+	/**
+	 * Отправка сообщений для незалогиненных пользователей
+	 *
+	 * @param int $order_id ID заказа
+	 * @param array $posted_data Данные формы оформления заказа
+	 * @param WC_Order $order Объект заказа
+	 */
+	public function sendMessagesToNotLogUser( $order_id, $posted_data = array(), $order = null ) {
+		// Проверяем, что пользователь не залогинен
+		if ( is_user_logged_in() ) {
+			return;
+		}
+		
+		// Проверяем валидность order_id
+		if ( ! $order_id ) {
+			return;
+		}
+		
+		// Получаем объект заказа если не передан
+		if ( ! $order ) {
+			$order = wc_get_order( $order_id );
+		}
+		
+		// Дополнительная проверка существования заказа
+		if ( ! $order ) {
+			return;
+		}
+		
+		// Выполняем действия
+		if ( $this->isSent() && ! $this->getOrderStatus( $order_id ) ) {
+			$this->toTelegram( $order_id );
+		}
+		$this->setOrderStatus( $order_id );
+	}
 
     public function sendMessages( $order_id )
     {
