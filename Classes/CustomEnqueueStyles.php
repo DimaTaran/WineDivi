@@ -6,9 +6,6 @@ class CustomEnqueueStyles
 {
 
     public function custom_manage_woo_styles() {
-// Disable default CF7 CSS
-//add_filter( 'wpcf7_load_css', '__return_false' );
-
 
         if ( function_exists( 'is_woocommerce' ) ) {
 
@@ -34,10 +31,19 @@ class CustomEnqueueStyles
                 wp_dequeue_script( 'jquery-placeholder' );
                 wp_dequeue_script( 'fancybox' );
                 wp_dequeue_script( 'jqueryui' );
-
             }
-
+	        
+	        wp_dequeue_style( 'brands-styles' );
+	       
         }
+	    
+	    // Disable default CF7 CSS
+	    //add_filter( 'wpcf7_load_css', '__return_false' );
+		if (!is_page('kontakty')) {
+			wp_dequeue_style( 'contact-form-7' );
+			wp_dequeue_script( 'contact-form-7' );
+			wp_dequeue_script( 'swv' );
+		}
     }
 
 

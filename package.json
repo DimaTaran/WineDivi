@@ -1,0 +1,35 @@
+{
+  "name": "winedivi",
+  "version": "1.0.0",
+  "description": "Divi Child Theme with Vite build system and React",
+  "author": "Dima Taran",
+  "license": "GPL-2.0-or-later",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --config vite/vite.config.j",
+    "build": "vite build --config vite/vite.config.js",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview --config vite/vite.config.js"
+  },
+  "dependencies": {
+    "html-react-parser": "^5.1.1",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@eslint/config-array": "^0.19.2",
+    "@eslint/object-schema": "^2.1.6",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "glob": "^11.0.1",
+    "postcss": "^8.4.27",
+    "rimraf": "^6.0.1",
+    "sass": "^1.65.1",
+    "vite": "^6.2.2"
+  }
+}
