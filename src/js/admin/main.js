@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return el('section', { className: 'wine-stats-section' },
                 el('h2', { className: 'main-title' },
-                    'Мы продали 104295 вин с августа 2013 года'
+                    data.title
                 ),
                 el('div', { className: 'stats-grid' },
                     ...statCards
