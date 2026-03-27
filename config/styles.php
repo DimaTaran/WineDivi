@@ -45,7 +45,7 @@
 				'handle' => 'admin-main-script',
 				'src' => $theme_path . '/assets/js/admin.js',
 				'deps' => ['jquery', 'react', 'react-dom'],
-				'version' => '1.0.2',
+				'version' => '1.0.3',
 				'in_footer' => true,
 				'strategy' => 'defer'
 			],
