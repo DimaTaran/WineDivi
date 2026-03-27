@@ -3,7 +3,7 @@
 //
 // Example main script
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Main script loaded');
+    // console.log('Main script loaded');
 
     // Your main script code here
 });

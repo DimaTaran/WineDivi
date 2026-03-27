@@ -30,6 +30,8 @@ export default defineConfig({
                 // React entry point
                 // react: resolve(__dirname, '../src/js/react/main.jsx'),  // React entry
 
+                // Vanilla JS entry points
+                admin: resolve(__dirname, '../src/js/admin/main.js'),
 
                 // SCSS entry points
                 style: resolve(__dirname, '../src/scss/main.scss'),

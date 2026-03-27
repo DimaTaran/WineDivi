@@ -10,7 +10,7 @@
 			'main-script' => [
 				'handle' => 'main-script',
 				'src' => $theme_path . '/assets/js/main.js',
-				'deps' => ['jquery'],
+				'deps' => ['jquery', 'react', 'react-dom'],
 				'version' => '1.0.0',
 				'in_footer' => true,
 				'strategy' => 'defer'
@@ -39,7 +39,17 @@
 				'version' => '1.0.0',
 				'media' => 'all'
 			],
-		]
+		],
+		'admin_js' => [
+			'admin-script' => [
+				'handle' => 'admin-main-script',
+				'src' => $theme_path . '/assets/js/admin.js',
+				'deps' => ['jquery', 'react', 'react-dom'],
+				'version' => '1.0.1',
+				'in_footer' => true,
+				'strategy' => 'defer'
+			],
+			],
 	];
 
 	return $assets_config;

@@ -1,2 +1,2 @@
-document.addEventListener("DOMContentLoaded",()=>{console.log("Main script loaded")});
+document.addEventListener("DOMContentLoaded",()=>{});
 //# sourceMappingURL=main.js.map

@@ -13,9 +13,10 @@ require_once('product_function/add-to-cart.php');
 
 // includes CONSTANS
 require_once "product_function/constans.php";
+
+//require_once 'blocks/wine-number/wine-number.php';
+
 // autoload Classes
-
-
 use WineDivi\Classes\CustomEnqueueStyles;
 use WineDivi\Classes\LoopExtensions;
 use WineDivi\Classes\ProductExtensions;

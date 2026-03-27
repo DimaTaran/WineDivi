@@ -29,7 +29,8 @@ class AddStylesAndScripts {
 		
 		// Add hooks for enqueueing scripts and styles
 		add_action('wp_enqueue_scripts', [$this, 'enqueueStyles']);
-		add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
+//		add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
+		add_action('admin_enqueue_scripts', [$this, 'enqueueAdminScripts']);
 		add_action( 'wp_enqueue_scripts', [$this, 'safeRemoveDiviChildStyles'], 20 );
 	}
 	
@@ -61,6 +62,30 @@ class AddStylesAndScripts {
 		}
 		
 		foreach ($this->config['js'] as $script) {
+			wp_enqueue_script(
+				$script['handle'],
+				$script['src'],
+				$script['deps'],
+				$script['version'],
+				$script['in_footer']
+			);
+			
+			// Add strategy (defer or async) if provided
+			if (isset($script['strategy']) && in_array($script['strategy'], ['defer', 'async'])) {
+				wp_script_add_data($script['handle'], 'strategy', $script['strategy']);
+			}
+		}
+	}
+	
+	/**
+	 * Enqueue admin scripts based on configuration
+	 */
+	public function enqueueAdminScripts() {
+		if (!isset($this->config['js']) || !is_array($this->config['js'])) {
+			return;
+		}
+		
+		foreach ($this->config['admin_js'] as $script) {
 			wp_enqueue_script(
 				$script['handle'],
 				$script['src'],

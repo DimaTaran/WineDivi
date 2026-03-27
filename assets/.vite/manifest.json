@@ -1,4 +1,10 @@
 {
+  "js/admin/main.js": {
+    "file": "js/admin.js",
+    "name": "admin",
+    "src": "js/admin/main.js",
+    "isEntry": true
+  },
   "js/vanilla/main.js": {
     "file": "js/main.js",
     "name": "main",

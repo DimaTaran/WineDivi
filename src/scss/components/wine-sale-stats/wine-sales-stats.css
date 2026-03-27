@@ -1,0 +1,166 @@
+/* Основная секция */
+.wine-stats-section {
+    width: 100%;
+    margin-top: 1.5rem;
+
+/* Заголовок */
+.main-title {
+    /*font-size: 1.5rem;*/
+    /*font-weight: 700;*/
+    /*color: white;*/
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Grid сетка - Mobile First */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* Карточка статистики */
+.stat-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    min-height: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Фоновое изображение */
+.stat-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.stat-card:hover .stat-card-bg {
+    transform: scale(1.1);
+}
+
+/* Оверлей с градиентом */
+.stat-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+}
+
+/* Контент карточки */
+.stat-card-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    min-height: 280px;
+    padding: 24px;
+}
+
+/* Число */
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Метка "бутылок" */
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+}
+
+/* Тип вина */
+.stat-type {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Tablet - 2 колонки */
+@media (min-width: 768px) {
+    .wine-stats-section {
+        /*padding: 64px 16px;*/
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .stat-card-content {
+        padding: 32px;
+    }
+
+    .stat-number {
+        font-size: 60px;
+    }
+
+    .stat-label {
+        font-size: 16px;
+    }
+
+    .stat-type {
+        font-size: 24px;
+    }
+}
+
+/* Desktop - 4 колонки */
+@media (min-width: 1024px) {
+    .wine-stats-section {
+        /*padding: 80px 16px;*/
+    }
+
+    .main-title {
+        font-size: 36px;
+        margin-bottom: 48px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .stat-number {
+        font-size: 72px;
+    }
+
+    .stat-label {
+        font-size: 18px;
+    }
+
+    .stat-type {
+        font-size: 28px;
+    }
+}
+
+}
+
