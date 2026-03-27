@@ -42,35 +42,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function renderBlock() {
-
+        // https://www.non-alcoholic-wines.in.ua/wp-content/uploads/2026/03/red-wine-stats.jpg
         const data = {
             stats:  [
                 {
                     number: '58871',
                     label: 'пляшок',
                     type: 'Червоних вин',
-                    bg: 'wp-content/themes/WineDivi/img/red-wine-stats.jpg'
+                    bg: 'https://www.non-alcoholic-wines.in.ua/wp-content/uploads/2026/03/red-wine-stats.jpg'
                 },
                 {
                     number: '61138',
                     label: 'пляшок',
                     type: 'Білих вин',
-                    bg: 'wp-content/themes/WineDivi/img/white-wine-stat.jpg'
+                    bg: 'https://www.non-alcoholic-wines.in.ua/wp-content/uploads/2026/03/white-wine-stat.jpg'
                 },
                 {
                     number: '19803',
                     label: 'пляшок',
                     type: 'Рожевих вин',
-                    bg: 'wp-content/themes/WineDivi/img/rose-wine-stat.jpg'
+                    bg: 'https://www.non-alcoholic-wines.in.ua/wp-content/uploads/2026/03/rose-wine-stat.jpg'
                 },
                 {
                     number: '65743',
                     label: 'пляшок',
                     type: 'Ігристих вин',
-                    bg: 'wp-content/themes/WineDivi/img/sparkling-wine-stat.jpg'
+                    bg: 'https://www.non-alcoholic-wines.in.ua/wp-content/uploads/2026/03/sparkling-wine-stat.jpg'
                 }
             ],
-            title :  'Ми продали 104295 пляшок с августа 2013 года'
+            title :  'Ми продали 104295 пляшок с серпня 2013 року'
         }
 
         const statCards = data.stats.map(({ number, label, type, bg }) =>
